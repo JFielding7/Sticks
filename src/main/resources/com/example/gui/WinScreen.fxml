@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.WinScreen">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.WinScreenController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="209.0" layoutY="128.0" prefHeight="244.0" prefWidth="382.0" spacing="75.0">
          <children>

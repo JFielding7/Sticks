@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class WinScreen implements Initializable {
+public class WinScreenController implements Initializable {
 
     static String winMessage = "";
     @FXML

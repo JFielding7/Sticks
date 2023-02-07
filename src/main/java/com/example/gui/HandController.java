@@ -255,7 +255,7 @@ public class HandController {
     }
 
     public void setWinScreen(String message) throws IOException {
-        WinScreen.winMessage = message;
+        WinScreenController.winMessage = message;
         Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("WinScreen.fxml")));
         Stage stage = (Stage) selectedIndicator.getScene().getWindow();
         stage.setScene(new Scene(parent));
