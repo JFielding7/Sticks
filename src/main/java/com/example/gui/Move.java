@@ -5,7 +5,7 @@ import java.util.*;
 public class Move {
 
     static HashSet<State> states = collectStates();
-    static HashMap<State, Integer> forcedWins = forcedLines(states, 0);
+    static HashMap<State, Integer> forcedWins = forcedLines(states);
     static HashMap<State, Integer> forcedLosses = reverseTurns(forcedWins);
 
     static HashMap<State, Integer> reverseTurns(HashMap<State, Integer> forcedWins){
@@ -15,11 +15,11 @@ public class Move {
         return forcedLosses;
     }
 
-    static HashMap<State, Integer> forcedLines(HashSet<State> states, int player) {
+    static HashMap<State, Integer> forcedLines(HashSet<State> states) {
         HashMap<State, Integer> forcedWins = new HashMap<>();
         for(int i = 0; i < 5; i++){
             for(int j = i; j < 5; j++)
-                forcedWins.put(new State(0, 0, i, j, player ^ 1), 0);
+                forcedWins.put(new State(0, 0, i, j, 1), 0);
         }
         boolean foundForce = true;
         while(foundForce){
@@ -28,10 +28,10 @@ public class Move {
                 if(forcedWins.containsKey(state))
                     continue;
                 HashSet<State> nextStates = state.getNextStates();
-                int movesToWin = state.turn == player ? anyForced(nextStates, forcedWins) : allForced(nextStates, forcedWins);
+                int movesToWin = state.turn == 0 ? anyForced(nextStates, forcedWins) : allForced(nextStates, forcedWins);
                 if(movesToWin != -1){
                     foundForce = true;
-                    forcedWins.put(state, movesToWin + (state.turn == player ? 1 : 0));
+                    forcedWins.put(state, movesToWin + (state.turn ^ 1));
                 }
             }
         }
