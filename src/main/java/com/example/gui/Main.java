@@ -3,6 +3,7 @@ package com.example.gui;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Title.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
         stage.setTitle("Sticks");
+        stage.getIcons().add(new Image("C:\\Users\\josep\\IdeaProjects\\SticksBot\\src\\main\\resources\\com\\example\\gui\\1FingersPlayerRight.png"));
         stage.setScene(scene);
         stage.show();
     }
